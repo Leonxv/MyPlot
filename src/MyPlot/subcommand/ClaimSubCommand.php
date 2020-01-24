@@ -60,6 +60,7 @@ class ClaimSubCommand extends SubCommand
 			return true;
 		}
 		if($this->getPlugin()->claimPlot($plot, $sender->getName(), $name)) {
+			$this->getPlugin()->newRandPlot($plot, 246, 44, 1);
 			$sender->sendMessage($this->translateString("claim.success"));
 		}else{
 			$sender->sendMessage(TextFormat::RED . $this->translateString("error"));
